@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utilles/assets.dart';
 import '../../../../../core/utilles/styles.dart';
@@ -21,12 +22,15 @@ GlobalKey<FormState> keyForm = GlobalKey();
             Image.asset(AssetsData.loginImage,),
             const SizedBox(height: 30,),
              CustomTextField(
+               obscureText: false,
                onChanged:(data){
                  email= data;
                } ,
                hintText: 'Email',),
             const SizedBox(height: 20,),
              CustomTextField(
+               suffixIcon: const Icon(CupertinoIcons.eye_slash),
+               obscureText: true,
               onChanged:(data){
                 password= data;
               } ,
@@ -68,7 +72,7 @@ GlobalKey<FormState> keyForm = GlobalKey();
               mainAxisAlignment: MainAxisAlignment.center,
               children: const[
                  Text('don,t have an account ?', style: Styles.textStyle16,),
-                 Text('Login',style: Styles.textStyle16,),
+                 Text('Login',style:TextStyle(color: Colors.purpleAccent, fontSize: 16)),
               ],
             ),
           ],

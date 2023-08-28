@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utilles/styles.dart';
 import 'package:bookly_app/feature/register/presention/views/register_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/utilles/app_router.dart';
@@ -24,12 +25,15 @@ class LoginViewBody extends StatelessWidget {
             Image.asset(AssetsData.loginImage,),
             const SizedBox(height: 30,),
              CustomTextField(
+               obscureText: false,
                onChanged: (data){
                  email =data;
                },
                hintText: 'Email',),
             const SizedBox(height: 20,),
              CustomTextField(
+               suffixIcon: const Icon(CupertinoIcons.eye_slash),
+               obscureText: true,
                onChanged: (data){
                  password =data;
                },
