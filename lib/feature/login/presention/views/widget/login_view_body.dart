@@ -3,9 +3,11 @@ import 'package:bookly_app/feature/register/presention/views/register_view.dart'
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/utilles/app_router.dart';
 import '../../../../../core/utilles/assets.dart';
+import '../../../../register/presention/views/widget/custom_text.dart';
 import 'custom_elveted_bottom.dart';
 import 'custom_text_form.dart';
 
@@ -21,9 +23,14 @@ class LoginViewBody extends StatelessWidget {
         key: keyForm,
         child: Column(
           children: [
-            const SizedBox(height: 40,),
-            Image.asset(AssetsData.loginImage,),
-            const SizedBox(height: 30,),
+            const SizedBox(height: 100,),
+            SvgPicture.asset(
+              AssetsData.loginImage,
+              fit: BoxFit.scaleDown,
+            ),
+            const SizedBox(height: 100,),
+            const CustomText(text: 'Login in',),
+             const SizedBox(height: 10,),
              CustomTextField(
                obscureText: false,
                onChanged: (data){

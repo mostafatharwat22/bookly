@@ -1,10 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../../../../core/utilles/assets.dart';
 import '../../../../../core/utilles/styles.dart';
 import '../../../../login/presention/views/widget/custom_elveted_bottom.dart';
 import '../../../../login/presention/views/widget/custom_text_form.dart';
+import 'custom_text.dart';
 
 class RegisterViewBody extends StatelessWidget {
    RegisterViewBody({Key? key,}) : super(key: key);
@@ -18,9 +20,14 @@ GlobalKey<FormState> keyForm = GlobalKey();
         key:keyForm,
         child: Column(
           children: [
-            const SizedBox(height: 40,),
-            Image.asset(AssetsData.loginImage,),
-            const SizedBox(height: 30,),
+            const SizedBox(height: 100,),
+            SvgPicture.asset(
+              AssetsData.loginImage,
+              fit: BoxFit.scaleDown,
+            ),
+            const SizedBox(height: 100,),
+            const CustomText(text: 'Register',),
+            const SizedBox(height: 10,),
              CustomTextField(
                obscureText: false,
                onChanged:(data){
